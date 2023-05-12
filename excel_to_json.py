@@ -1,10 +1,14 @@
 import pandas as pd
 
-excel_data_df = pd.read_excel('data mess.xlsx', sheet_name='Sheet1')
+excel_data_df = pd.read_excel('data mess 2.xlsx', sheet_name='Sheet2')
 
-json_file = excel_data_df.to_json()
+df = excel_data_df.fillna('')
 
-print('.xlsx to .json', json_file)
+print(df)
+
+json_file = df.to_json()
+
+print('Excel Sheet to JSON:\n', json_file)
 
 file = 'json_converted.json'
 with open(file, 'w') as to_convert:
